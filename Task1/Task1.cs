@@ -21,19 +21,22 @@ class Task1
             myArray[i] = i + 1;
         }
 
-        var result = new List<int>();
+        var resultIntegers = new List<int>();
 
         var index = 0;
         do
         {
-            result.Add(myArray[index]);
+            resultIntegers.Add(myArray[index]);
 
             index += (interval - 1);
             index = index % myArray.Length;
         } while (myArray[index] != myArray[0]);
 
-        var resultString = string.Join(' ', result);
-        Console.WriteLine("Конечный результат: " + resultString);
+        foreach (var integerValue in resultIntegers)
+        {
+            Console.Write(integerValue);
+        }
+        
         Console.ReadLine();
     }
 }

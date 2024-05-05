@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Numerics;
+﻿using System.Numerics;
 
 namespace Task4;
 
@@ -59,12 +58,11 @@ class Task2
 
     static void GetPointPosition(Circle circle, BigRationalPoint[] convertedPoints)
     {
-        var results = new int[convertedPoints.Length];
-
-        for (var i = 0; i < convertedPoints.Length; i++)
+        foreach (var point in convertedPoints)
         {
-            var x = convertedPoints[i].X - circle.Center.X;
-            var y = convertedPoints[i].Y - circle.Center.Y;
+            var x = point.X - circle.Center.X;
+            var y = point.Y - circle.Center.Y;
+            
             var distanceSqr = x * x + y * y;
             var radiusSqr = circle.Radius * circle.Radius;
 
